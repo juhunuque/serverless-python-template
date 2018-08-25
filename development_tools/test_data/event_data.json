@@ -1,0 +1,45 @@
+{
+  "headers": {
+    "Cache-Control": "no-cache",
+    "Postman-Token": "c7f21602-0f7f-4bca-9eaf-62bed6894d8d",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "User-Agent": "PostmanRuntime/6.2.5",
+    "Accept": "*/*",
+    "Host": "localhost:8298",
+    "Accept-Encoding": "gzip, deflate",
+    "Content-Length": 12,
+    "Connection": "keep-alive"
+  },
+  "path": "/",
+  "pathParameters": null,
+  "requestContext": {
+    "accountId": "offlineContext_accountId",
+    "resourceId": "offlineContext_resourceId",
+    "stage": "dev",
+    "requestId": "offlineContext_requestId_",
+    "identity": {
+      "cognitoIdentityPoolId": "offlineContext_cognitoIdentityPoolId",
+      "accountId": "offlineContext_accountId",
+      "cognitoIdentityId": "offlineContext_cognitoIdentityId",
+      "caller": "offlineContext_caller",
+      "apiKey": "offlineContext_apiKey",
+      "sourceIp": "127.0.0.1",
+      "cognitoAuthenticationType": "offlineContext_cognitoAuthenticationType",
+      "cognitoAuthenticationProvider": "offlineContext_cognitoAuthenticationProvider",
+      "userArn": "offlineContext_userArn",
+      "userAgent": "PostmanRuntime/6.2.5",
+      "user": "offlineContext_user"
+    },
+    "authorizer": {
+      "principalId": "offlineContext_authorizer_principalId"
+    },
+    "resourcePath": "/message",
+    "httpMethod": "GET"
+  },
+  "resource": "/",
+  "httpMethod": "GET",
+  "queryStringParameters": null,
+  "body": "message=Test",
+  "stageVariables": null,
+  "isOffline": true
+}

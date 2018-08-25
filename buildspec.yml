@@ -1,0 +1,30 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo "Install phase"
+      # Install nodejs https://nodejs.org/en/download/package-manager/
+      - curl -sL https://deb.nodesource.com/setup_7.x | bash -
+      - apt-get install -y nodejs
+      # Install serverless
+      - npm install -g serverless -y
+      - echo "Installing python"
+      # Install python
+      - apt-get install software-properties-common python-software-properties -y
+      - add-apt-repository ppa:jonathonf/python-3.6 -y
+      - apt-get update
+      - apt-get install python3.6 -y
+      - apt install python3.6-dev -y
+      # Install pip
+      - wget https://bootstrap.pypa.io/get-pip.py
+      - python3.6 get-pip.py
+  pre_build:
+    commands:
+      - echo "Pre Build phase skipped"
+  build:
+    commands:
+      - echo "Build phase"
+      - npm install
+  post_build:
+    commands:
+      - sls deploy --stage ${STAGE} --no-color

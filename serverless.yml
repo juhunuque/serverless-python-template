@@ -1,0 +1,45 @@
+service: severless-python-template
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  pythonRequirements:
+    zip: true
+    dockerizePip: non-linux
+
+package:
+  individually: true
+  exclude:
+    - env/**
+    - .git/
+    - .gitignore
+  include:
+    - requirements.txt
+    - src/**
+
+
+provider:
+  name: aws
+  runtime: python3.6
+  region: us-east-1
+  timeout: 300
+  versionFunctions: false
+  environment: ${file(config-${self:custom.stage}.yml):environment}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+       -
+         "*"
+      Resource: "*"
+
+functions:
+  index:
+    handler: src/api/handler.index
+    events:
+      - http:
+          path: /
+          method: get
+
