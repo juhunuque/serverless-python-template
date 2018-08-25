@@ -11,7 +11,6 @@ from urllib.parse import parse_qsl
 
 
 def index(event, context):
-    print('HOLA')
     response = {
         "statusCode": 200,
         "body": json.dumps({
